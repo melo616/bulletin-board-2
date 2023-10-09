@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get("/", { :controller => "boards", :action => "index" })
+  devise_for :users
+  root to: "boards#index"
+  # the above syntax replaces the below when using devise. Devise wants us to use this syntax to establish our root route.
+  # get("/", { :controller => "boards", :action => "index" })
 
   # Routes for the Post resource:
 
